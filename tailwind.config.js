@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,jsx,ts,tsx}'], // src 내부 모든 html/js/jsx/ts/tsx 파일 검사
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -9,6 +9,11 @@ export default {
         'white': 'rgba(255, 255, 255, 1)',
         'black' : '#111111',
         'bg-gray': '#f3f3f3',
+        'tripblue': '#0051D3',
+        'tripyellow': 'FFDA00',
+        'tripgreen':'3EB489',
+        'tripsun':'FF7F50',
+
       },
       fontSize: {
         'main-slide': '4rem',
@@ -33,7 +38,11 @@ export default {
           "'Nanumsquare600'",
            'sans-serif'],
         tway: ['twaysky', 'sans-serif'],
-        inter:['inter','sans-serif'],
+        inter:[
+          'inter',
+          'inter600',
+          'sans-serif',
+        ],
         jamsil: [
           "'TheJamsil100'",
           "'TheJamsil300'",
@@ -44,6 +53,10 @@ export default {
           'sans-serif',
         ],
         
+      },
+      maxWidth: {
+        '1920': '1920px',
+        '1440': '1440px',
       },
     },
   },
