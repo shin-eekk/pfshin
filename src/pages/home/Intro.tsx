@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 const Intro = () => {
     return (
-      <section className="max-w-1920 flex flex-col justify-center items-start gap-6 px-6 md:px-10 bg-main-bg">
-        <p className="text-lg text-gray-500 ">안녕하세요 👋</p>
+      <section className="max-w-1920 bg-main-bg flex flex-col justify-center items-start gap-6 px-6 md:px-10 bg-main-bg">
+        <p className="text-lg text-gray-500 ">안녕하세요</p>
   
-        <h1 className="text-4xl md:text-5xl  text-gray-800 leading-tight">
-          I'm <span className="text-blue-600 font-tway">Your Name</span><br />
-          Front-End Developer
+        <h1 className="text-6xl md:text-5xl font-tway">
+          What <span className='text-main'>Your Name</span><br/>
+          gja ktjasld LSTlqWERLAJSDGKLQPLA
         </h1>
   
         <p className="font-nanum max-w-xl text-gray-700 text-base md:text-lg leading-relaxed">
