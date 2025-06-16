@@ -1,40 +1,37 @@
 interface TripterProps {
+    id: string;
     title: string;
     p: string;
+    p2: string;
+    bigimg: string;
     cls?: string;
+    cls2?: string; 
+    cls3?: string;   
   }
   
-  export default function Tripter({ title, p, cls }: TripterProps) {
+  export default function Tripter({ title, p, p2, cls, cls2, cls3, bigimg, id }: TripterProps) {
     return (
-    <div className="relative">
-        <a href="./TeamProject">
-            <img src="https://raw.githubusercontent.com/shin-eekk/pfshin/imgsource/tripter_img/thumnail.png"
-            alt="트립터썸네일" className="absolute left-0 z-0 hover:brightness-75 md:w-[700px] md:h-[525px] sm:w-[350px] sm:h-[263px]" />
+    <div id={id} className={`${cls} flex mx-auto pt-40 pb-60 bg-main-bg`}>
+        <a className="block"  href="./TeamProject">
+            <img src={bigimg}
+            alt="트립터썸네일" className=" hover:brightness-75 w-[968px] h-[726px]" />
         </a>
-        <div className="max-w-1440 mx-auto relative flex justify-end [gap:30px]">
-            <div className={`{cls} flex flex-col h-full justify-end text-right relative bg-main-bg [gap:20px]`}>
-                <h1 className="font-tway text-5xl text-right">{title}</h1> 
-                <span className="font-jamsil font-medium text-4xl text-right">Tripter</span>
-                <p className="font-nanum text-right">{p}</p>
-                <div className="max-w-[640px] max-h-[200px] flex relative [gap:20px] ">
-                    <div className="w-[30%] aspect-square bg-gray-400">
-                        <img src="" alt="" />
-                    </div>
-                    <div className="w-[30%] aspect-square bg-white">
-                        <img src="" alt="" />
-                    </div>
-                    <div className="w-[30%] aspect-square bg-white">
-                        <img src="" alt="" />
-                    </div>
-                </div>    
+        <div className="max-w-1440 mx-auto lg:ml-[50px] flex flex-col justify-between ">
+            <div className={`flex flex-col ${cls3} gap-6 pt-4`}>
+                <h1 className="font-tway text-main-slide ">{title}</h1> 
+                <p className="font-jamsil text-big">{p}</p>
+                <p className="font-nanum text-medium">{p2}</p>
             </div>
-        </div>
-        {/* <div className="absolute w-[968px] h-[726px] md:w-[700px] md:h-[525px] sm:w-[350px] sm:h-[263px] left-0 bg-main z-0"> */}
-            홈페이지 썸네일
-            
-            {/* </div>   */}
-        
-    </div>      
+                <div className={`${cls2} w-[640px] h-[200px] flex gap-[20px] mt-auto`}>
+                    <div className="flex-1 bg-gray-400 aspect-square">
+                    <img src="" alt="" /></div>
+                    <div className="flex-1 bg-white aspect-square">
+                    <img src="" alt="" /></div>
+                    <div className="flex-1 bg-white aspect-square">
+                    <img src="" alt="" /></div>
+                </div>
+        </div> 
+    </div>    
     );
   }
   

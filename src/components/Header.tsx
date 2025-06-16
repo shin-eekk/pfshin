@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <header className="font-inter bg-main-bg text-black px-6 py-4 shadow-sm sticky top-0 z-50 ">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-3">
-        <div className="font-tway text-black text-xl font-bold text-gray-800">
+      <div className="max-w-1440 mx-auto flex items-center justify-between px-6 py-3">
+        <div className="font-tway text-black text-xl font-bold">
           로고 제목 Shin
         </div>
     

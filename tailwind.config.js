@@ -16,10 +16,10 @@ export default {
 
       },
       fontSize: {
-        'main-slide': '4rem',
-        'huge': '3rem',
-        'big': '2.5rem',
-        'semibig': '2rem',
+        'main-slide': '4rem', //64
+        'huge': '3rem', //48
+        'big': '2.5rem', //40
+        'semibig': '2rem', 
         'mediumbig': '1.75rem',
         'medium': '1.5rem',
         'semismall': '1.25rem',
@@ -36,7 +36,7 @@ export default {
           "'Nanumsquare400'",
           "'Nanumsquare500'",
           "'Nanumsquare600'",
-           'sans-serif'],
+          'sans-serif'],
         tway: ['twaysky', 'sans-serif'],
         inter:[
           'inter',
@@ -57,7 +57,13 @@ export default {
       maxWidth: {
         '1920': '1920px',
         '1440': '1440px',
+        '1080': '1080px'
       },
+      minHeight: {
+        '1080': '1080px',
+        '726' :'726px',
+
+      }
     },
   },
   plugins: [],

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Intro = () => {
     return (
-      <section className="max-w-1920 bg-main-bg flex flex-col justify-center items-start gap-6 px-6 md:px-10 bg-main-bg">
-        <p className="text-lg text-gray-500 ">안녕하세요</p>
+      <section className="font-nanum max-w-1440 min-h-screen bg-main-bg flex flex-col justify-center items-start mx-auto gap-6 px-6 md:px-10">
+        <p className="text-lg  ">안녕하세요</p>
   
         <h1 className="text-6xl md:text-5xl font-tway">
           What <span className='text-main'>Your Name</span><br/>
@@ -18,10 +18,9 @@ const Intro = () => {
         <div className="flex gap-4 mt-4">
           <Link
             to="/about"
-            className="font-nanum bg-main-bg text-main px-8 py-2 rounded-3xl hover:bg-main hover:text-white transition ">
+            className="font-nanum  text-main border-2 border-main rounded-3xl px-10 py-4 hover:bg-main hover:text-white transition ">
             더보기
           </Link>
-          
         </div>
       </section>
     );
