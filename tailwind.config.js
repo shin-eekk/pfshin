@@ -31,29 +31,12 @@ export default {
         'custom': '1px 1px 5px rgba(0,0,0,0.25)',
       },
       fontFamily: {
-        nanum: [
-          "'Nanumsquare300'",
-          "'Nanumsquare400'",
-          "'Nanumsquare500'",
-          "'Nanumsquare600'",
-          'sans-serif'],
-        tway: ['twaysky', 'sans-serif'],
-        inter:[
-          'inter',
-          'inter600',
-          'sans-serif',
-        ],
-        jamsil: [
-          "'TheJamsil100'",
-          "'TheJamsil300'",
-          "'TheJamsil400'",
-          "'TheJamsil500'",
-          "'TheJamsil700'",
-          "'TheJamsil800'",
-          'sans-serif',
-        ],
-        
+        nanum: ['Nanumsquare', 'sans-serif'],
+        tway: ['twaysky','sans-serif'],
+        inter:['inter', 'sans-serif'],
+        jamsil: [ 'TheJamsil', 'sans-serif'],
       },
+
       maxWidth: {
         '1920': '1920px',
         '1440': '1440px',
@@ -62,9 +45,28 @@ export default {
       minHeight: {
         '1080': '1080px',
         '726' :'726px',
-
       }
     },
   },
   plugins: [],
+
+  keyframes: {
+    fadeInLeft: {
+      '0%': { opacity: 0, transform: 'translateX(-50px)' },
+      '100%': { opacity: 1, transform: 'translateX(0)' },
+    },
+    fadeInRight: {
+      '0%': { opacity: 0, transform: 'translateX(50px)' },
+      '100%': { opacity: 1, transform: 'translateX(0)' },
+    },
+    fadeInUp: {
+      '0%': { opacity: 0, transform: 'translateY(30px)' },
+      '100%': { opacity: 1, transform: 'translateY(0)' },
+    },
+  },
+  animation: {
+    fadeInLeft: 'fadeInLeft 1s ease-out forwards',
+    fadeInRight: 'fadeInRight 1s ease-out forwards',
+    fadeInUp: 'fadeInUp 1s ease-out forwards',
+  },
 }

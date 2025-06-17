@@ -18,7 +18,7 @@ const Intro = () => {
         <div className="flex gap-4 mt-4">
           <Link
             to="/about"
-            className="font-nanum  text-main border-2 border-main rounded-3xl px-10 py-4 hover:bg-main hover:text-white transition ">
+            className="font-nanum text-main border border-main rounded-[50px] px-12 py-4 hover:bg-main hover:text-white transition-colors duration-300">
             더보기
           </Link>
         </div>

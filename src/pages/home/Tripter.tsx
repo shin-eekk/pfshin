@@ -5,33 +5,52 @@ interface TripterProps {
     p2: string;
     bigimg: string;
     cls?: string;
-    cls2?: string; 
-    cls3?: string;   
+    cls2?: string;
+    cls3?: string;
+    cls4?: string;
+    smimg: string[];
+    link?: string;
+    hovertext?: string;
   }
   
-  export default function Tripter({ title, p, p2, cls, cls2, cls3, bigimg, id }: TripterProps) {
+  export default function Tripter({ id, title, p, p2, cls, cls2, cls3, cls4, bigimg, smimg, link, hovertext }: TripterProps) {
     return (
-    <div id={id} className={`${cls} flex mx-auto pt-40 pb-60 bg-main-bg`}>
-        <a className="block"  href="./TeamProject">
-            <img src={bigimg}
-            alt="트립터썸네일" className=" hover:brightness-75 w-[968px] h-[726px]" />
+      <div id={id} className={`${cls}`}>
+        <a className="block relative group w-fit" href={link} target="_blank">
+          <img
+            src={bigimg}
+            alt="트립터썸네일"
+            className="w-[968px] h-[726px] drop-shadow-custom"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 z-10 group-hover:opacity-100 transition-opacity duration-300 ">
+          <span className="text-white text-medium font-jamsil font-medium">{hovertext}</span>
+        </div>
         </a>
-        <div className="max-w-1440 mx-auto lg:ml-[50px] flex flex-col justify-between ">
-            <div className={`flex flex-col ${cls3} gap-6 pt-4`}>
-                <h1 className="font-tway text-main-slide ">{title}</h1> 
-                <p className="font-jamsil text-big">{p}</p>
-                <p className="font-nanum text-medium">{p2}</p>
-            </div>
-                <div className={`${cls2} w-[640px] h-[200px] flex gap-[20px] mt-auto`}>
-                    <div className="flex-1 bg-gray-400 aspect-square">
-                    <img src="" alt="" /></div>
-                    <div className="flex-1 bg-white aspect-square">
-                    <img src="" alt="" /></div>
-                    <div className="flex-1 bg-white aspect-square">
-                    <img src="" alt="" /></div>
-                </div>
-        </div> 
-    </div>    
+  
+        <div className={cls2}>
+          <div className={`${cls3}`}>
+            <h1 className="font-tway text-main-slide">{title}</h1>
+            <p className="font-jamsil font-bold text-big ">{p}</p>
+            <p className="font-nanum text-medium">{p2}</p>
+          </div>
+  
+          <div className={`${cls4}`}>
+            {smimg.map((src, idx) => (
+               <div
+               key={idx}
+               className="flex-1 bg-white aspect-square overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2"
+             >
+               <img
+                 src={src}
+                 alt={`썸네일-${idx}`}
+                 className="w-full h-full object-cover "
+               />
+             </div>
+            ))}
+          </div>
+        </div>
+      </div>
     );
   }
+  
   
