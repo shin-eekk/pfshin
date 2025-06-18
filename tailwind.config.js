@@ -16,7 +16,7 @@ export default {
 
       },
       fontSize: {
-        'main-slide': '4rem', //64
+        'main-slide': '6rem', 
         'huge': '3rem', //48
         'big': '2.5rem', //40
         'semibig': '2rem', 
