@@ -29,7 +29,7 @@ interface TripterProps {
   
         <div className={cls2}>
           <div className={`${cls3}`}>
-            <h1 className="font-tway text-main-slide">{title}</h1>
+            <h1 className="font-tway text-huge">{title}</h1>
             <p className="font-jamsil font-bold text-big ">{p}</p>
             <p className="font-nanum text-medium">{p2}</p>
           </div>

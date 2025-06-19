@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import exampleimg from '../../assets/exampleimg.png';
 
 const Intro = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -13,89 +12,86 @@ const Intro = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const vh = window.innerHeight;
-  const ratio = scrollY / vh;
+  const ratio = scrollY / window.innerHeight;
 
-  // 텍스트 별 보임 구간 (범위 내면 보임, 범위 밖이면 숨김)
-  const isInRange = (start: number, end: number) => ratio >= start && ratio <= end;
-
-  // 인사말
-  const helloOpacity = isInRange(0.1, 0.5) ? 1 : 0;
-  const helloTransform = helloOpacity ? 'translateX(0)' : ratio < 0.1 ? 'translateX(-100px)' : 'translateX(100px)';
-
-  // 타이틀
-  const titleOpacity = isInRange(0.4, 0.8) ? 1 : 0;
-  const titleTransform = titleOpacity ? 'translateY(0)' : ratio < 0.4 ? 'translateY(20px)' : 'translateY(-20px)';
-
-  // 설명
-  const descOpacity = isInRange(0.7, 1.1) ? 1 : 0;
-  const descTransform = descOpacity ? 'translateY(0)' : ratio < 0.7 ? 'translateY(40px)' : 'translateY(-40px)';
-
-  // 버튼
-  const buttonOpacity = ratio >= 1 ? 1 : 0;
+  const showImagine = ratio >= 0.1;
+  const showPlan = ratio >= 0.3;
+  const showMakeReal = ratio >= 0.5;
+  const showDesc = ratio >= 0.9;
+  const showButton = ratio >= 0.9;
 
   return (
-    <div className="relative h-[200vh]">
-      {/* 🎯 이미지 고정 (배경 역할) */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[600px] h-auto pointer-events-none">
-        <img src={exampleimg} alt="배경 이미지" className="w-full h-auto object-cover" />
-      </div>
+    <div className="relative h-[250vh] w-full bg-main-bg">
 
-      {/* ⬇️ 텍스트 콘텐츠 */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center items-start max-w-1440 mx-auto px-6 md:px-10">
-        {/* 인사말 */}
-        <h1
-          className="text-main-slide text-lg mt-40"
-          style={{
-            transform: helloTransform,
-            opacity: helloOpacity,
-            transition: 'all 0.8s ease-in-out',
-          }}
-        >
-          안녕하세요
-        </h1>
-          {/*<--두번째 h1 나오면 첫번째 h1은 사라지게*/}
-        {/* 타이틀 */}
-        <h1
-          className="text-6xl md:text-5xl font-tway text-main-slide mb-32"
-          style={{
-            opacity: titleOpacity,
-            transform: titleTransform,
-            transition: 'all 0.6s ease-out',
-          }}
-        >
-          What <span className="text-main">Your Name</span>
-          <br />
-          gjaLSTlqWERLAJSDGK
-        </h1>
+      {/* 고정된 배경 + 텍스트 */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden z-10 flex items-center justify-center">
+        <div className="relative w-full max-w-1440 h-full flex flex-col items-center justify-center px-6">
+          {/* 배경 이미지 */}
+          <img
+            src="https://picsum.photos/750/500"
+            alt="배경"
+            className="absolute right-10 top-[30%] object-cover z-0"
+          />
 
-        {/* 설명 */}
-        <p
-          className="font-nanum max-w-xl text-gray-700 text-base md:text-lg leading-relaxed mb-20"
-          style={{
-            transform: descTransform,
-            opacity: descOpacity,
-            transition: 'all 0.6s ease-out',
-          }}
-        >
-          소개글을 여기도 쓸지 말지. <br />
-          소개글을 무ㅝ라고 쓰면 좋을까나?
-        </p>
+          {/* 텍스트 애니메이션 */}
+          <div className="relative z-10">
+            <h1
+              className="font-tway text-mainIntro mx-16 transition-all duration-700 ease-in-out"
+              style={{
+                opacity: showImagine ? 1 : 0,
+                transform: showImagine ? 'translateX(0)' : 'translateX(-40px)',
+              }}
+            >
+              Imagine,
+            </h1>
 
-        {/* 버튼 */}
-        <div
-          className="flex gap-4 pb-10"
-          style={{
-            opacity: buttonOpacity,
-            transition: 'opacity 1s ease-out',
-          }}
-        >
-          <Link
-            to="/about"
-            className="font-nanum text-main border border-main rounded-[50px] px-12 py-4 hover:bg-main hover:text-white transition-colors duration-300"
-          >
-            더보기
-          </Link>
+            <h1
+              className="font-tway text-mainIntro mx-16 transition-all duration-700 ease-in-out"
+              style={{
+                opacity: showPlan ? 1 : 0,
+                transform: showPlan ? 'translateX(0)' : 'translateX(40px)',
+              }}
+            >
+              Plan,
+            </h1>
+
+            <h1
+              className="font-tway text-mainIntro text-main mx-16 transition-all duration-700 ease-in-out"
+              style={{
+                opacity: showMakeReal ? 1 : 0,
+                transform: showMakeReal ? 'translateY(0)' : 'translateY(40px)',
+              }}
+            >
+              Make Real
+            </h1>
+
+            <p
+              className="font-nanum text-semismall md:text-lg mb-8 transition-all duration-500 ease-in"
+              style={{
+                opacity: showDesc ? 1 : 0,
+                transform: showDesc ? 'scale(1)' : 'scale(0.9)',
+              }}
+            >
+              소개글 <br />
+              소개글 간단히 있다면
+            </p>
+
+            <div
+              className="transition-opacity duration-1000"
+              style={{
+                opacity: showButton ? 1 : 0,
+                pointerEvents: showButton ? 'auto' : 'none',
+              }}
+            >
+              <Link
+                to="/about"
+                className="group relative inline-block w-[200px] font-nanum text-semismall text-main border border-main px-12 py-4 transition-colors duration-300"
+              >
+                더보기
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-main transition-all duration-300 group-hover:left-0 group-hover:w-full" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

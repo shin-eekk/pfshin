@@ -10,14 +10,14 @@ export default {
         'black' : '#111111',
         'bg-gray': '#f3f3f3',
         'tripblue': '#0051D3',
-        'tripyellow': 'FFDA00',
-        'tripgreen':'3EB489',
-        'tripsun':'FF7F50',
+        'tripyellow': '#FFDA00',
+        'tripgreen':'#3EB489',
+        'tripsun':'#FF7F50',
 
       },
       fontSize: {
-        'main-slide': '6rem', 
-        'huge': '3rem', //48
+        'mainIntro': '7rem', 
+        'huge': '4rem', //48
         'big': '2.5rem', //40
         'semibig': '2rem', 
         'mediumbig': '1.75rem',
@@ -50,23 +50,5 @@ export default {
   },
   plugins: [],
 
-  keyframes: {
-    fadeInLeft: {
-      '0%': { opacity: 0, transform: 'translateX(-50px)' },
-      '100%': { opacity: 1, transform: 'translateX(0)' },
-    },
-    fadeInRight: {
-      '0%': { opacity: 0, transform: 'translateX(50px)' },
-      '100%': { opacity: 1, transform: 'translateX(0)' },
-    },
-    fadeInUp: {
-      '0%': { opacity: 0, transform: 'translateY(30px)' },
-      '100%': { opacity: 1, transform: 'translateY(0)' },
-    },
-  },
-  animation: {
-    fadeInLeft: 'fadeInLeft 1s ease-out forwards',
-    fadeInRight: 'fadeInRight 1s ease-out forwards',
-    fadeInUp: 'fadeInUp 1s ease-out forwards',
-  },
+  
 }
