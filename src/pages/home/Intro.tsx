@@ -27,11 +27,58 @@ const Intro = () => {
       <div className="sticky top-0 h-screen w-full overflow-hidden z-10 flex items-center justify-center">
         <div className="relative w-full max-w-1440 h-full flex flex-col items-center justify-center px-6">
           {/* 배경 이미지 */}
-          <img
-            src="https://picsum.photos/750/500"
-            alt="배경"
-            className="absolute right-10 top-[30%] object-cover z-0"
-          />
+          {/* 배경 이미지들 */}
+          {[
+            {
+              src: 'https://picsum.photos/400/300?1',
+              top: '20%',
+              left: '10%',
+              width: '200px',
+              rotate: '-10deg',
+              zIndex: 1,
+            },
+            {
+              src: 'https://picsum.photos/400/300?2',
+              top: '40%',
+              right: '5%',
+              width: '300px',
+              rotate: '15deg',
+              zIndex: 0,
+            },
+            {
+              src: 'https://picsum.photos/400/300?3',
+              bottom: '10%',
+              left: '30%',
+              width: '250px',
+              rotate: '5deg',
+              zIndex: 2,
+            },
+            {
+              src: 'https://picsum.photos/400/300?4',
+              top: '60%',
+              left: '60%',
+              width: '180px',
+              rotate: '-5deg',
+              zIndex: 1,
+            },
+          ].map((img, idx) => (
+            <img
+              key={idx}
+              src={img.src}
+              alt={`bg-${idx}`}
+              className="absolute object-cover transition-opacity duration-1000"
+              style={{
+                top: img.top,
+                left: img.left,
+                right: img.right,
+                bottom: img.bottom,
+                width: img.width,
+                transform: `rotate(${img.rotate})`,
+                zIndex: img.zIndex,
+              }}
+            />
+          ))}
+
 
           {/* 텍스트 애니메이션 */}
           <div className="relative z-10">

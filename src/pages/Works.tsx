@@ -1,7 +1,9 @@
 
 const Works = () => {
-  return (
-    <Myworks></Myworks>
+  return ( 
+    <div>
+    개인프로젝트?
+    </div>
   )
 }
 
